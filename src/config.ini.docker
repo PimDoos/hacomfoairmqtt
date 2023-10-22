@@ -1,53 +1,42 @@
 [DEFAULT]
 # Serial port CA350 RS232 / RS485 direct or via USB TTL adapter
-SerialPort=/dev/cuau3
+SerialPort={{SERIAL_PORT}}
 # Select RS232 or RS485 protocol
-RS485_protocol=False
+RS485_protocol={{RS485_PROTOCOL}}
 # Interval in seconds at which data from RS232 will be polled
-refresh_interval=10
+refresh_interval={{REFRESH_INTERVAL}}
 # automatically enable PC Mode (disable comfosense)
-enablePcMode=False
-debug=False
-
-[DEVICE]
-FanOutAbsent=15
-FanOutLow=25
-FanOutMid=40
-FanOutHigh=70
-FanInAbsent=15
-FanInLow=25
-FanInMid=40
-FanInHigh=70
-SetUpFanLevelsAtStart=True
+enablePcMode={{ENABLE_PC_MODE}}
+debug={{DEBUG}}
 
 [MQTT]
 # MQTT broker - IP
-MQTTServer=10.144.1.103
+MQTTServer={{MQTT_SERVER}}
 # MQTT broker - Port
-MQTTPort=1883
+MQTTPort={{MQTT_PORT}}
  # MQTT broker - keepalive
-MQTTKeepalive=45
+MQTTKeepalive={{MQTT_KEEPALIVE}}
 # MQTT broker - user - default: empty (disabled/no authentication)
-MQTTUser=
+MQTTUser={{MQTT_USER}}
 # MQTT broker - password - default: empty (disabled/no authentication)
-MQTTPassword=
+MQTTPassword={{MQTT_PASSWORD}}
 
 [HA]
 # Home Assistant sensor auto discovery
-HAEnableAutoDiscoverySensors=True
+HAEnableAutoDiscoverySensors={{HA_ENABLE_AUTO_DISCOVERY_SENSORS}}
 
 # Home Assistant climate auto discovery
-HAEnableAutoDiscoveryClimate=True
+HAEnableAutoDiscoveryClimate={{HA_ENABLE_AUTO_DISCOVERY_CLIMATE}}
 
 # Home Assistant Device Discovery
 # Unique device ID (change this to be unique if running multiple instances)
-HAAutoDiscoveryDeviceId=ca350
+HAAutoDiscoveryDeviceId={{HA_AUTO_DISCOVERY_DEVICE_ID}}
 
 # Device name shown in the frontend
-HAAutoDiscoveryDeviceName=CA350
+HAAutoDiscoveryDeviceName={{HA_AUTO_DISCOVERY_DEVICE_NAME}}
 
 # Device manufacturer shown in device info
-HAAutoDiscoveryDeviceManufacturer=Zehnder
+HAAutoDiscoveryDeviceManufacturer={{HA_AUTO_DISCOVERY_DEVICE_MANUFACTURER}}
 
 # Device model shown in device info
-HAAutoDiscoveryDeviceModel=ComfoAir 350
+HAAutoDiscoveryDeviceModel={{HA_AUTO_DISCOVERY_DEVICE_MODEL}}
