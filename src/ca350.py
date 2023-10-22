@@ -47,6 +47,8 @@ FanInLow = int(config['DEVICE']['FanInLow'])
 FanInMid = int(config['DEVICE']['FanInMid'])
 FanInHigh = int(config['DEVICE']['FanInHigh'])
 
+SetUpFanLevelsAtStart = config['DEVICE']['SetUpFanLevelsAtStart'] == 'True'
+
 MQTTServer = config['MQTT']['MQTTServer']            # MQTT broker - IP
 MQTTPort = int(config['MQTT']['MQTTPort'])           # MQTT broker - Port
 MQTTKeepalive = int(config['MQTT']['MQTTKeepalive']) # MQTT broker - keepalive
@@ -1162,6 +1164,9 @@ else:
             set_pc_mode(3)
         else:
             set_pc_mode(0)  # If PC mode is disabled, deactivate it (in case it was activated in an earlier run)
+    if SetUpFanLevelsAtStart:
+        set_fan_levels(Intake=True, Exhaust=True)
+    
     mqttc.loop_start()
     while True:
         try:
