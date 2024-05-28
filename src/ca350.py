@@ -38,7 +38,6 @@ refresh_interval = int(config['DEFAULT']['refresh_interval'])  # Interval in sec
 enablePcMode = config['DEFAULT']['enablePcMode'] == 'True'     # automatically enable PC Mode (disable comfosense)
 debug = config['DEFAULT']['debug'] == 'True'
 
-#Fan % configuration for each ventilation level
 FanOutAbsent = int(config['DEVICE']['FanOutAbsent'])
 FanOutLow = int(config['DEVICE']['FanOutLow'])
 FanOutMid = int(config['DEVICE']['FanOutMid'])
